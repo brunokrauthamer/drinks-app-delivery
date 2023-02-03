@@ -6,6 +6,7 @@
   height: 100%;
   justify-content: space-evenly;
   margin-top: 100px;
+  opacity: 0.9;
   padding: 20px;
   width: 97vw;
 }
@@ -35,6 +36,7 @@
   flex-flow: column wrap;
   height: 400px;
   margin: 30px 15px;
+  padding: 10px;
   width: 250px;
 }
 
@@ -60,8 +62,18 @@
   font-size: 20px;
   font-weight: 600;
   height: 80px;
+  justify-content: space-evenly;
   padding: 15px 20px;
   position: fixed;
   right: 100px;
-  width: 250px;
+  width: 300px;
+}
+
+.btn-cart:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+h3 {
+  text-align: center;
 }

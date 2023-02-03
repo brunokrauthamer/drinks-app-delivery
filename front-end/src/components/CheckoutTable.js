@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
+import { TbBeerOff } from 'react-icons/tb';
 import Context from '../context/Context';
 
 export default function CheckoutTable() {
@@ -39,101 +40,104 @@ export default function CheckoutTable() {
   };
 
   return (
-    <table className="table-checkout">
-      <thead className="line-checkout">
-        <tr>
-          <th className="line-checkout">Item</th>
-          <th className="line-checkout">Descrição</th>
-          <th className="line-checkout">Quantidade</th>
-          <th className="line-checkout">Valor Unitário</th>
-          <th className="line-checkout">Sub-total</th>
-          { location.pathname === pathCheckout ? (
-            <th className="line-checkout">Remover Item</th>
-          ) : null }
-        </tr>
-      </thead>
-      <tbody>
-        { drinks.map((drink, index) => {
-          const { id, name, price, quantity } = drink;
-          const subTotal = setSubTotal(price, quantity);
-          return (
-            <tr key={ id }>
-              <td
-                className="line-checkout"
-                data-testid={
-                  `${role}_${testId}__element-order-table-item-number-${index}`
-                }
-              >
-                { index + 1 }
-
-              </td>
-              <td
-                className="line-checkout"
-                data-testid={ `${role}_${testId}__element-order-table-name-${index}` }
-              >
-                { name }
-
-              </td>
-              <td
-                className="line-checkout"
-              >
-
-                <p
+    <div>
+      <table className="table-checkout">
+        <thead>
+          <tr className="line-title">
+            <th className="line-checkout">Item</th>
+            <th className="line-checkout">Descrição</th>
+            <th className="line-checkout">Quantidade</th>
+            <th className="line-checkout">Valor Unitário</th>
+            <th className="line-checkout">Sub-total</th>
+            { location.pathname === pathCheckout ? (
+              <th className="line-checkout">Remover Item</th>
+            ) : null }
+          </tr>
+        </thead>
+        <tbody>
+          { drinks.map((drink, index) => {
+            const { id, name, price, quantity } = drink;
+            const subTotal = setSubTotal(price, quantity);
+            return (
+              <tr key={ id }>
+                <td
+                  className="line-checkout"
                   data-testid={
-                    `${role}_${testId}__element-order-table-quantity-${index}`
+                    `${role}_${testId}__element-order-table-item-number-${index}`
                   }
                 >
-                  {quantity}
-                </p>
+                  { index + 1 }
 
-              </td>
-              <td
-                className="line-checkout"
-                data-testid={
-                  `${role}_${testId}__element-order-table-unit-price-${index}`
-                }
-              >
-                {price.toString().replace('.', ',')}
+                </td>
+                <td
+                  className="line-checkout"
+                  data-testid={ `${role}_${testId}__element-order-table-name-${index}` }
+                >
+                  { name }
 
-              </td>
-              <td
-                className="line-checkout"
-                data-testid={
-                  `${role}_${testId}__element-order-table-sub-total-${index}`
-                }
-              >
-                { subTotal }
+                </td>
+                <td
+                  className="line-checkout"
+                >
 
-              </td>
-              {
-                location.pathname === pathCheckout ? (
-                  <td
-                    className="line-checkout"
+                  <p
                     data-testid={
-                      `${role}_checkout__element-order-table-remove-${index}`
+                      `${role}_${testId}__element-order-table-quantity-${index}`
                     }
                   >
-                    <button type="button" onClick={ () => removeDrink(id) }>
-                      Remover
-                    </button>
-                  </td>
-                ) : null
-              }
-            </tr>
-          );
-        }) }
-      </tbody>
-      <tfoot>
-        <tr>
-          <td className="line-checkout total-value">
-            {' '}
-            Total: R$
-            <div data-testid={ `${role}_${testId}__element-order-total-price` }>
-              { setTotal() }
-            </div>
-          </td>
-        </tr>
-      </tfoot>
-    </table>
+                    {quantity}
+                  </p>
+
+                </td>
+                <td
+                  className="line-checkout"
+                  data-testid={
+                    `${role}_${testId}__element-order-table-unit-price-${index}`
+                  }
+                >
+                  {price.toString().replace('.', ',')}
+
+                </td>
+                <td
+                  className="line-checkout"
+                  data-testid={
+                    `${role}_${testId}__element-order-table-sub-total-${index}`
+                  }
+                >
+                  { subTotal }
+
+                </td>
+                {
+                  location.pathname === pathCheckout ? (
+                    <td
+                      className="line-checkout"
+                      data-testid={
+                        `${role}_checkout__element-order-table-remove-${index}`
+                      }
+                    >
+                      <button
+                        type="button"
+                        onClick={ () => removeDrink(id) }
+                        className="btn-remove"
+                      >
+                        Remover
+                        {' '}
+                        <TbBeerOff />
+                      </button>
+                    </td>
+                  ) : null
+                }
+              </tr>
+            );
+          }) }
+        </tbody>
+      </table>
+      <div className="line-checkout total-value">
+        Total: R$
+        <div data-testid={ `${role}_${testId}__element-order-total-price` }>
+          { setTotal() }
+        </div>
+      </div>
+    </div>
   );
 }

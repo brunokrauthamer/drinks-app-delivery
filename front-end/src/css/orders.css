@@ -1,0 +1,105 @@
+.container-orders {
+  align-items: center;
+  background-color: rgb(228, 228, 228);
+  display: flex;
+  flex-flow: column wrap;
+  height: 100vh;
+  justify-content: space-around;
+  opacity: 0.9;
+  width: 100%;
+}
+
+.section-orders {
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column;
+  height: 80%;
+  justify-content: space-evenly;
+  margin: 150px;
+  width: 80%;
+}
+
+.card-orders {
+  align-items: center;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px 1px rgb(141, 141, 141);
+  cursor: pointer;
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 20px;
+  height: 25%;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.card-orders:hover {
+  border: 1px ridge black;
+}
+
+.container-card {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  height: 90%;
+  justify-content: space-evenly;
+  margin: 20px;
+  width: 100%;
+}
+
+.status-order {
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  font-size: 27px;
+  font-weight: 900;
+  height: 80%;
+  justify-content: center;
+  opacity: 0.9;
+  width: 40%;
+}
+
+.status-order-grey {
+  background-color: rgb(141, 141, 141);
+}
+
+.status-order-yellow {
+  background-color: rgb(189, 150, 65);
+  font-size: 26px;
+}
+
+.status-order-red {
+  background-color: rgb(253, 41, 41);
+  font-size: 28px;
+}
+
+.status-order-green {
+  background-color: rgb(74, 161, 74);
+  font-size: 26px;
+}
+
+.title-orders {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
+.date-order {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.price-order {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.order-number {
+  font-size: 30px;
+  font-weight: 600;
+  width: 120px;
+}

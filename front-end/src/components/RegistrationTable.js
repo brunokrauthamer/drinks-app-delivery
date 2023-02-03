@@ -1,14 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { requestDelete } from '../services/requests';
 
 export default function RegistrationTable({ users }) {
-  // const teste = [
-  //   { id: 1,
-  //     name: 'Fulana Pereira',
-  //     email: 'fulana@deliveryapp.com',
-  //     type: 'P. Vendedora' },
-  //   { id: 2, name: 'Zé Birita', email: 'zebirita@email.com', type: 'Cliente' },
-  // ];
+  const deleteUser = async (id) => {
+    await requestDelete('/admin', { id });
+  };
 
   return (
     <table className="table-checkout">
@@ -70,6 +67,7 @@ export default function RegistrationTable({ users }) {
                   data-testid={
                     `admin_manage__element-user-table-remove-${index}`
                   }
+                  onClick={ () => deleteUser(id) }
                 >
                   Excluir
                 </button>

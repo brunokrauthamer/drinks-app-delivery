@@ -53,7 +53,6 @@ export default function Checkout() {
         ...data,
         totalPrice: Number(totalPrice.replace(',', '.')),
         products });
-      // saveToLocal('cartDrinks', []);
       navigate(`/customer/orders/${id}`);
     } catch (error) {
       console.error(error);
@@ -64,16 +63,19 @@ export default function Checkout() {
     <main className="container-checkout">
       <Header />
       <section className="container-section-checkout">
-        <h1>Finalizar Pedido</h1>
-        <CheckoutTable />
+        <section className="section-checkout">
+          <h1 className="title-checkout">Finalizar Pedido</h1>
+          <CheckoutTable />
+        </section>
       </section>
-      <section className="container-section-checkout">
-        <h1>Detalhes e Endereço para Entrega</h1>
-        <div className="line-checkout delivery-container">
+      <section className="container-section-checkout section-checkout">
+        <h1 className="title-checkout">Detalhes e Endereço para Entrega</h1>
+        <div className="delivery-container">
 
-          <label htmlFor="sellerName">
+          <label htmlFor="sellerName" className="label-input-checkout">
             P. Vendedora Responsável:
             <select
+              className="input-checkout select-checkout"
               data-testid="customer_checkout__select-seller"
               onChange={ handleChange }
               name="sellerId"
@@ -89,9 +91,10 @@ export default function Checkout() {
 
             </select>
           </label>
-          <label htmlFor="deliveryAddress">
+          <label htmlFor="deliveryAddress" className="label-input-checkout">
             Endereço
             <input
+              className="input-checkout"
               type="text"
               name="deliveryAddress"
               placeholder="Digite seu endereço"
@@ -100,9 +103,10 @@ export default function Checkout() {
               onChange={ handleChange }
             />
           </label>
-          <label htmlFor="deliveryNumber">
+          <label htmlFor="deliveryNumber" className="label-input-checkout">
             Número
             <input
+              className="input-checkout"
               type="number"
               name="deliveryNumber"
               data-testid="customer_checkout__input-address-number"
@@ -111,6 +115,7 @@ export default function Checkout() {
             />
           </label>
           <button
+            className="btn-finish"
             type="button"
             data-testid="customer_checkout__button-submit-order"
             onClick={ () => sendDataToDB() }

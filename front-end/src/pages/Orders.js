@@ -4,6 +4,7 @@ import Headers from '../components/Header';
 import OrderCard from '../components/OrderCard';
 import Context from '../context/Context';
 import { setToken, requestGet } from '../services/requests';
+import '../css/orders.css';
 
 export default function Orders() {
   const { getToLocal } = useContext(Context);
@@ -30,9 +31,16 @@ export default function Orders() {
   return (
     <div>
       <Headers />
-      <div>
-        {allOrders.map((e) => <OrderCard order={ e } key={ e.id } />)}
-      </div>
+      <main className="container-orders ">
+        <section className="section-orders">
+          <h1 className="title-orders">
+            Lista de Pedidos
+          </h1>
+          <div className="container-card">
+            {allOrders.map((e) => <OrderCard order={ e } key={ e.id } />)}
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Headers from '../components/Header';
+import { TiShoppingCart } from 'react-icons/ti';
 import DrinkCard from '../components/DrinkCard';
+import Headers from '../components/Header';
 import { requestGet, setToken } from '../services/requests';
 import Context from '../context/Context';
 import '../css/products.css';
@@ -71,6 +72,7 @@ function Products() {
         <p data-testid="customer_products__checkout-bottom-value">
           {totalCart}
         </p>
+        <TiShoppingCart />
       </button>
     </div>
   );

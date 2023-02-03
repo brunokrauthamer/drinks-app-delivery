@@ -4,6 +4,7 @@ import Headers from '../components/Header';
 import Context from '../context/Context';
 import CheckoutTable from '../components/CheckoutTable';
 import { requestGet, setToken, requestPut } from '../services/requests';
+import '../css/detailsOrder.css';
 
 export default function Orders() {
   const { getToLocal, formatDate } = useContext(Context);
@@ -31,7 +32,7 @@ export default function Orders() {
       console.log(error);
     }
   };
-
+  const dataTestId = 'customer_order_details__element-order-details-label-seller-name';
   useEffect(() => {
     const localUser = getToLocal('user');
     setRole(localUser.role);
@@ -40,74 +41,84 @@ export default function Orders() {
   }, []);
 
   return (
-    <div>
+    <div className="container-checkout">
+      <Headers />
       <div>
-        <Headers />
-        <h1>Detalhe do Pedido</h1>
-        <div>
-          <p
-            data-testid={
-              `${role}_order_details__element-order-details-label-order-id`
-            }
-          >
-            { `PEDIDO ${sale.id}` }
-          </p>
-
-          <p
-            data-testid="customer_order_details__element-order-details-label-seller-name"
-          >
-            { `P.Vend: ${sale.sellerName ? sale.sellerName : ''}` }
-          </p>
-
-          <p
-            data-testid={
-              `${role}_order_details__element-order-details-label-order-date`
-            }
-          >
-            { formatDate(sale.saleDate) }
-          </p>
-          <p
-            data-testid={
-              `${role}_order_details__element-order-details-label-delivery-status`
-            }
-          >
-            { sale.status }
-          </p>
-          { role === 'customer' ? (
-            <button
-              type="button"
-              data-testid="customer_order_details__button-delivery-check"
-              disabled={ sale.status !== 'Em Trânsito' }
-              name="delivered"
-              onClick={ (event) => updateStatus(event) }
+        <div className=" section-checkout section-details">
+          <h1 className="title-checkout">Detalhe do Pedido</h1>
+          <div className="container-data-delivery">
+            <p
+              className="title-data-delivery title-orderDetails"
+              data-testid={
+                `${role}_order_details__element-order-details-label-order-id`
+              }
             >
-              MARCAR COMO ENTREGUE
-            </button>
-          ) : (
-            <div>
+              { `PEDIDO ${sale.id}` }
+            </p>
+
+            <p
+              data-testid={ dataTestId }
+              className="title-data-delivery"
+            >
+              { `P.Vend: ${sale.sellerName ? sale.sellerName : ''}` }
+            </p>
+
+            <p
+              data-testid={
+                `${role}_order_details__element-order-details-label-order-date`
+              }
+              className="title-data-delivery"
+            >
+              { `Data: ${formatDate(sale.saleDate)}` }
+            </p>
+            <p
+              data-testid={
+                `${role}_order_details__element-order-details-label-delivery-status`
+              }
+              className="title-data-delivery title-data-delivery-btn"
+            >
+              { sale.status }
+            </p>
+            { role === 'customer' ? (
               <button
+                className="btn-order-details"
                 type="button"
-                data-testid="seller_order_details__button-preparing-check"
-                disabled={ sale.status !== 'Pendente' }
-                name="preparing"
+                data-testid="customer_order_details__button-delivery-check"
+                disabled={ sale.status !== 'Em Trânsito' }
+                name="delivered"
                 onClick={ (event) => updateStatus(event) }
               >
-                PREPARAR PEDIDO
-
+                MARCAR COMO ENTREGUE
               </button>
-              <button
-                type="button"
-                data-testid="seller_order_details__button-dispatch-check"
-                name="dispatch"
-                disabled={ sale.status !== 'Preparando' }
-                onClick={ (event) => updateStatus(event) }
-              >
-                SAIU PRA ENTREGA
+            ) : (
+              <div>
+                <button
+                  className="btn-order-details-preparing"
+                  type="button"
+                  data-testid="seller_order_details__button-preparing-check"
+                  disabled={ sale.status !== 'Pendente' }
+                  name="preparing"
+                  onClick={ (event) => updateStatus(event) }
+                >
+                  PREPARAR PEDIDO
 
-              </button>
-            </div>
-          )}
+                </button>
+                <button
+                  className="btn-order-details-dispatch"
+                  type="button"
+                  data-testid="seller_order_details__button-dispatch-check"
+                  name="dispatch"
+                  disabled={ sale.status !== 'Preparando' }
+                  onClick={ (event) => updateStatus(event) }
+                >
+                  SAIU PRA ENTREGA
+
+                </button>
+              </div>
+            )}
+          </div>
           <CheckoutTable />
+
         </div>
       </div>
     </div>

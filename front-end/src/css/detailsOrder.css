@@ -1,0 +1,73 @@
+.container-data-delivery {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.title-data-delivery {
+  font-size: 20px;
+  font-weight: 600;
+  width: 230px;
+}
+
+.section-details {
+  margin-bottom: 40px;
+  width: 850px;
+}
+
+.btn-order-details {
+  background-color: rgb(74, 161, 74);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.9;
+  padding: 15px 10px;
+}
+
+.btn-order-details:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.title-data-delivery-btn {
+  width: 200px;
+}
+
+.btn-order-details-preparing {
+  background-color: rgb(207, 154, 40);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 20px;
+  opacity: 0.9;
+  padding: 15px 10px;
+}
+
+.btn-order-details-dispatch {
+  background-color: rgb(253, 41, 41);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.9;
+  padding: 15px 10px;
+}
+
+.btn-order-details-dispatch:disabled, .btn-order-details-preparing:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.title-orderDetails {
+  font-size: 30px;
+}

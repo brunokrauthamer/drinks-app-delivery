@@ -15,8 +15,22 @@ export default function OrderCard({ order }) {
     if (pathname !== '/customer/orders') setTestId('seller');
   }, []);
 
+  const setCssColor = () => {
+    if (status === 'Pendente') {
+      return 'status-order-grey';
+    }
+    if (status === 'Preparando') {
+      return 'status-order-yellow';
+    }
+    if (status === 'Em Trânsito') {
+      return 'status-order-red';
+    }
+    return 'status-order-green';
+  };
+
   return (
     <button
+      className="card-orders"
       type="button"
       onClick={ async () => {
         try {
@@ -29,23 +43,33 @@ export default function OrderCard({ order }) {
         }
       } }
     >
+
       <div
+        className="order-number"
         data-testid={ `${testId}_orders__element-order-id-${id}` }
       >
         {`Pedido ${id}` }
       </div>
       <div
+        className={ `status-order ${setCssColor()}` }
         data-testid={ `${testId}_orders__element-delivery-status-${id}` }
       >
         {status}
       </div>
-      <div data-testid={ `${testId}_orders__element-order-date-${id}` }>
-        { formatDate(saleDate)}
-      </div>
-      <div
-        data-testid={ `${testId}_orders__element-card-price-${id}` }
-      >
-        {totalPrice.toString().replace('.', ',')}
+
+      <div>
+        <div
+          data-testid={ `${testId}_orders__element-order-date-${id}` }
+          className="date-order"
+        >
+          { formatDate(saleDate)}
+        </div>
+        <div
+          className="price-order"
+          data-testid={ `${testId}_orders__element-card-price-${id}` }
+        >
+          {totalPrice.toString().replace('.', ',')}
+        </div>
       </div>
     </button>
 
