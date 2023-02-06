@@ -80,3 +80,14 @@
 .container-register {
   height: 400px;
 }
+
+@media screen and ( max-width : 420px ) {
+
+  .img-logo {
+    width: 50%;
+  }
+
+  .container-login {
+    width: 80%;
+  }
+}

@@ -3,6 +3,8 @@ import Headers from '../components/Header';
 import RegistrationTable from '../components/RegistrationTable';
 import { requestGet, requestPost, setToken } from '../services/requests';
 import Context from '../context/Context';
+import '../css/registration.css';
+import { MdOutlineAppRegistration } from 'react-icons/md';
 
 export default function Registration() {
   const { getToLocal } = useContext(Context);
@@ -52,13 +54,13 @@ export default function Registration() {
   };
 
   useEffect(() => {
-    getAllUsers();
     const { token } = getToLocal('user');
     setToken(token);
+    getAllUsers();
   });
 
   return (
-    <main>
+    <main className="container-registration">
       <Headers />
       <p
         data-testid="admin_manage__element-invalid-register"
@@ -66,75 +68,84 @@ export default function Registration() {
       >
         Usuário já cadastrado
       </p>
-      <h1>
-        Cadastrar novo usuário
-      </h1>
-      <form>
-        <label htmlFor="name">
-          Nome
-          <input
-            data-testid="admin_manage__input-name"
-            type="text"
-            name="name"
-            placeholder="Nome e Sobrenome"
-            onChange={ handleChange }
-            value={ data.name }
-          />
-        </label>
-        <label htmlFor="email">
-          Email
-          <input
-            data-testid="admin_manage__input-email"
-            type="email"
-            name="email"
-            placeholder="seuemail@fastrefresh.com"
-            onChange={ handleChange }
-            value={ data.email }
-          />
-        </label>
-        <label htmlFor="password">
-          Password
-          <input
-            type="password"
-            data-testid="admin_manage__input-password"
-            name="password"
-            placeholder="*********"
-            onChange={ handleChange }
-            value={ data.password }
-          />
-        </label>
-        <label htmlFor="role">
-          Tipo
-          <select
-            data-testid="admin_manage__select-role"
-            name="role"
-            onChange={ handleChange }
-            value={ data.role }
+      <div className="container-form">
+        <h1>
+          Cadastrar novo usuário
+        </h1>
+        <form className="form-registration">
+          <label htmlFor="name" className="container-label">
+            Nome
+            <input
+              className="input-registration"
+              data-testid="admin_manage__input-name"
+              type="text"
+              name="name"
+              placeholder="Nome e Sobrenome"
+              onChange={ handleChange }
+              value={ data.name }
+            />
+          </label>
+          <label htmlFor="email" className="container-label">
+            Email
+            <input
+              className="input-registration"
+              data-testid="admin_manage__input-email"
+              type="email"
+              name="email"
+              placeholder="seuemail@fastrefresh.com"
+              onChange={ handleChange }
+              value={ data.email }
+            />
+          </label>
+          <label htmlFor="password" className="container-label">
+            Password
+            <input
+              className="input-registration"
+              type="password"
+              data-testid="admin_manage__input-password"
+              name="password"
+              placeholder="*********"
+              onChange={ handleChange }
+              value={ data.password }
+            />
+          </label>
+          <label htmlFor="role" className="container-label">
+            Tipo
+            <select
+              className="input-registration select-registration"
+              data-testid="admin_manage__select-role"
+              name="role"
+              onChange={ handleChange }
+              value={ data.role }
+            >
+
+              <option
+                name="seller"
+                value="seller"
+              >
+                Vendedor
+              </option>
+              <option
+                name="customer"
+                value="customer"
+              >
+                Cliente
+              </option>
+            </select>
+          </label>
+          <button
+            type="button"
+            data-testid="admin_manage__button-register"
+            disabled={ isDisabled() }
+            onClick={ (event) => registerUser(event) }
+            className="btn-finish btn-registration"
           >
-            <option
-              name="seller"
-              value="seller"
-            >
-              Vendedor
-            </option>
-            <option
-              name="customer"
-              value="customer"
-            >
-              Cliente
-            </option>
-          </select>
-        </label>
-        <button
-          type="button"
-          data-testid="admin_manage__button-register"
-          disabled={ isDisabled() }
-          onClick={ (event) => registerUser(event) }
-        >
-          Cadastrar
-        </button>
-      </form>
-      <section>
+            Cadastrar
+            <MdOutlineAppRegistration className="icon-registration " />
+          </button>
+        </form>
+      </div>
+      <section className="container-form">
         <h1>Lista de usuários</h1>
         <RegistrationTable users={ users } />
       </section>

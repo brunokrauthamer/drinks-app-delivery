@@ -4,6 +4,7 @@ import { requestPost, setToken } from '../services/requests';
 import Context from '../context/Context';
 import '../css/login.css';
 import logo from '../css/images/logo.jpg';
+import 'animate.css';
 
 function Login() {
   const [login, setLogin] = useState({
@@ -60,7 +61,7 @@ function Login() {
   return (
     <div className="container">
       <img
-        className="img-logo"
+        className="img-logo animate__animated animate__bounceInLeft"
         src={ logo }
         alt="Logo FastRefresh"
       />

@@ -67,7 +67,7 @@ export default function Headers() {
               className="btn-header"
               type="button"
               data-testid="customer_products__element-navbar-link-orders"
-              onClick={ () => navigate('/admin/users') }
+              onClick={ () => navigate('/admin/manage') }
             >
               GERENCIAR USUÁRIOS
             </button>

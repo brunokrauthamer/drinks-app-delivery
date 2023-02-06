@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { TbBeer } from 'react-icons/tb';
 import Context from '../context/Context';
 import Header from '../components/Header';
 import { requestGet, setToken, requestPost } from '../services/requests';
@@ -121,6 +122,7 @@ export default function Checkout() {
             onClick={ () => sendDataToDB() }
           >
             Finalizar pedido
+            <TbBeer className="icon-checkout" />
           </button>
         </div>
       </section>

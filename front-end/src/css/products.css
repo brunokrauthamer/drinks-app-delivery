@@ -77,3 +77,15 @@
 h3 {
   text-align: center;
 }
+
+@media screen and ( max-width : 420px ) {
+
+  .container-products {
+    padding: 20px 0;
+  }
+
+  .btn-cart {
+    left: 9%;
+    right: 0;
+  }
+}

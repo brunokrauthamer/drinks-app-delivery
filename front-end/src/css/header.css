@@ -59,3 +59,33 @@ input::-webkit-inner-spin-button {
   font-weight: 600;
   margin-right: 20px;
 }
+
+
+@media screen and ( max-width : 420px ) {
+
+  .container-header {
+    flex-flow: row;
+    height: 130px;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .img-logo-header {
+    display: none;
+    width: 1px;
+  }
+
+  .nav-header {
+    align-items: center;
+    flex-flow: column;
+    margin: 0;
+    width: 200px;
+  }
+
+  .btn-header {
+    font-size: 20px;
+    height: 100%;
+    padding: 5px;
+    width: 100%;
+  }
+}
