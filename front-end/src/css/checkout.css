@@ -140,24 +140,58 @@ td {
     width: 90%;
   }
 
+  .container-phone {
+    overflow-x: scroll;
+    width: 300px;
+  }
+
   .table-checkout {
-    font-size: 10px;
     width: 100%;
-    word-break: keep-all;    
+  }
+
+  .line-title {
+    font-size: 10px;
+    height: 30px;
   }
 
   .line-checkout {
-    font-size: 5px;
-    width: 100px;
+    font-size: 15px;
+    padding: 5px;
+    white-space: nowrap;
+  }
+
+  tr {
+    height: 0;
   }
 
   td {
-    line-height: 0;
-    width: 10px;
+    word-break: break-all;
   }
 
   .btn-remove {
-    font-size: 5px;
+    font-size: 15px;
     padding: 5px;
   }
+
+  .title-checkout {
+    font-size: 18px;
+  }
+
+  .delivery-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: space-evenly;
+    padding: 0;
+  }
+
+  .section-details {
+    width: 300px !important;
+  }
+
+  .title-orderDetails {
+    font-size: 20px !important;
+  }
+
 }

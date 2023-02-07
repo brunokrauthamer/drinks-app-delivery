@@ -88,4 +88,12 @@ input::-webkit-inner-spin-button {
     padding: 5px;
     width: 100%;
   }
+
+  .btn-register-user {
+    width: 200px;
+  }
+
+  .name-header {
+    text-align: center;
+  }
 }

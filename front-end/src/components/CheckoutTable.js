@@ -40,7 +40,7 @@ export default function CheckoutTable() {
   };
 
   return (
-    <div>
+    <div className="container-phone">
       <table className="table-checkout">
         <thead>
           <tr className="line-title">

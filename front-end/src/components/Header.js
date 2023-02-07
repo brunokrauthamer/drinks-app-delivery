@@ -64,7 +64,7 @@ export default function Headers() {
         user.role === 'administrator'
           ? (
             <button
-              className="btn-header"
+              className="btn-header btn-register-user"
               type="button"
               data-testid="customer_products__element-navbar-link-orders"
               onClick={ () => navigate('/admin/manage') }

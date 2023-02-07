@@ -71,3 +71,11 @@
 .title-orderDetails {
   font-size: 30px;
 }
+
+@media screen and ( max-width : 420px ) {
+
+  .btn-order-details-preparing {
+    margin-bottom: 10px;
+  }
+
+}

@@ -57,7 +57,7 @@ export default function OrderCard({ order }) {
         {status}
       </div>
 
-      <div>
+      <div className="container-phone-price">
         <div
           data-testid={ `${testId}_orders__element-order-date-${id}` }
           className="date-order"

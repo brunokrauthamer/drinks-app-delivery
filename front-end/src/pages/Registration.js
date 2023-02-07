@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { MdOutlineAppRegistration } from 'react-icons/md';
 import Headers from '../components/Header';
 import RegistrationTable from '../components/RegistrationTable';
 import { requestGet, requestPost, setToken } from '../services/requests';
 import Context from '../context/Context';
 import '../css/registration.css';
-import { MdOutlineAppRegistration } from 'react-icons/md';
 
 export default function Registration() {
   const { getToLocal } = useContext(Context);
@@ -69,7 +69,7 @@ export default function Registration() {
         Usuário já cadastrado
       </p>
       <div className="container-form">
-        <h1>
+        <h1 className="title-newUser">
           Cadastrar novo usuário
         </h1>
         <form className="form-registration">
@@ -147,7 +147,9 @@ export default function Registration() {
       </div>
       <section className="container-form">
         <h1>Lista de usuários</h1>
-        <RegistrationTable users={ users } />
+        <div className="container-table-phone">
+          <RegistrationTable users={ users } />
+        </div>
       </section>
 
     </main>

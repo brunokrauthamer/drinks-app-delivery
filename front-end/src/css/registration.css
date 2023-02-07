@@ -70,3 +70,29 @@
 .btn-registration {
   margin-top: 30px;
 }
+
+@media screen and ( max-width : 420px ) {
+
+  .title-newUser {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .form-registration {
+    flex-flow: column;
+  }
+
+  .container-label {
+    margin-bottom: 15px;
+  }
+
+
+  .select-registration {
+    width: 280px;
+  }
+
+  .container-table-phone {
+    overflow-x: scroll;
+    width: 300px;
+  }
+}

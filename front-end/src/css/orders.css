@@ -103,3 +103,56 @@
   font-weight: 600;
   width: 120px;
 }
+
+@media screen and ( max-width : 420px ) {
+
+  .container-card {
+    height: 70%;
+    overflow-y: scroll;
+  }
+
+  .section-orders {
+    height: 70%;
+    margin-left: 25px;
+    margin-top: 270px;
+    width: 320px;
+  }
+
+  .title-orders {
+    font-size: 20px;
+  }
+
+  .card-orders {
+    height: 100px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    width: 280px;
+  }
+
+  .order-number {
+    font-size: 20px;
+  }
+
+  .status-order {
+    font-size: 18px;
+    height: 50px;
+    margin-top: 10px;
+    width: 90px;
+  }
+
+  .date-order {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .price-order {
+    font-size: 20px;
+  }
+
+  .container-phone-price {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 205px;
+  }
+}
