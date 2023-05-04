@@ -1,0 +1,91 @@
+.container-products {
+  align-items: center;
+  background-color: rgb(228, 228, 228);
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  opacity: 0.9;
+  padding: 20px;
+  width: 97vw;
+}
+
+.img-card-products {
+  width: 200px;
+}
+
+.img-skol {
+  width: 100px;
+}
+
+.input-quantity {
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+  width: 50px;
+}
+
+.container-card-products {
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  height: 400px;
+  margin: 30px 15px;
+  padding: 10px;
+  width: 250px;
+}
+
+.btn-card {
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+  width: 30px;
+}
+
+.btn-cart {
+  align-items: center;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  bottom: 20px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-size: 20px;
+  font-weight: 600;
+  height: 80px;
+  justify-content: space-evenly;
+  padding: 15px 20px;
+  position: fixed;
+  right: 100px;
+  width: 300px;
+}
+
+.btn-cart:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+h3 {
+  text-align: center;
+}
+
+@media screen and ( max-width : 420px ) {
+
+  .container-products {
+    padding: 20px 0;
+  }
+
+  .btn-cart {
+    left: 9%;
+    right: 0;
+  }
+}

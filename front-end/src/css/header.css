@@ -1,0 +1,99 @@
+.container-header {
+  background-color: red;
+  display: flex;
+  flex-flow: row;
+  height: 100px;
+  justify-content: space-between;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999999;
+}
+
+.nav-header {
+  align-items: center;
+  display: flex;
+  flex-flow: row;
+  margin: 0 20px;
+}
+
+.img-logo-header {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: scale-down;
+
+}
+
+.btn-header {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  height: 85%;
+  margin-bottom: 5px;
+  padding: 20px;
+  width: 150px;
+}
+
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.btn-header:hover {
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px 2px rgb(138, 0, 0);
+}
+
+.btn-header:active {
+  border: 2px inset rgb(138, 0, 0);
+  box-shadow: none;
+  margin-top: 5px;
+}
+
+.name-header {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+
+@media screen and ( max-width : 420px ) {
+
+  .container-header {
+    flex-flow: row;
+    height: 130px;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .img-logo-header {
+    display: none;
+    width: 1px;
+  }
+
+  .nav-header {
+    align-items: center;
+    flex-flow: column;
+    margin: 0;
+    width: 200px;
+  }
+
+  .btn-header {
+    font-size: 20px;
+    height: 100%;
+    padding: 5px;
+    width: 100%;
+  }
+
+  .btn-register-user {
+    width: 200px;
+  }
+
+  .name-header {
+    text-align: center;
+  }
+}
