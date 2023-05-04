@@ -1,1 +1,6 @@
-# Drinks Delivery App
+#  Beer Delivery App
+
+## About:
+This project was developed as part of the Trybe development course. It's a web application that connects beer sellers with buyers. Buyers can visit the website, browse available products, and choose from a list of sellers. Once they make a purchase, an order is created in the system with the status "in preparation". The seller then prepares the order and contacts a delivery driver, changing the order status to "sent". Once the orders arrive at their destination, buyers should change the order status to "arrived". The website allows buyers to view all their orders and their respective statuses. The same feature is available to sellers, who can only be created by the system admin.
+
+All information is transmitted via the front-end and back-end through an API and stored in a MySQL database. During development, we conducted extensive testing to ensure the application was functioning as expected. The project was developed as a group effort, and I was responsible for developing the back-end, collaborating with other team members by contributing code and reviewing their work. The other developers who contributed to the project were @Abernardes19, @CarlaUyemura, @danilobarrosribeiro, and @PamelaCP.
