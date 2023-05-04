@@ -1,7 +1,23 @@
 #  Beer Delivery App
 
 ## Admin Experience:
-![](beer_delivery_app-adm.mp4)
+https://user-images.githubusercontent.com/102389687/236335063-7e3c165c-a76f-4b53-a4bb-a15a006fa7ba.mp4
+
+## Customer Experience (making a new order):
+https://user-images.githubusercontent.com/102389687/236335379-9b1beb8b-36ba-4fd7-9118-6b75af446a96.mp4
+
+## Seller Experience:
+
+
+https://user-images.githubusercontent.com/102389687/236335563-2a8b94c8-f1cc-4a06-a905-5d7139bb237d.mp4
+
+## Customer Experience (receiving an order):
+
+
+https://user-images.githubusercontent.com/102389687/236335627-1c13d42b-b968-47e6-82a9-7a892f87c4a3.mp4
+
+
+
 
 ## About:
 This project was developed as part of the Trybe development course. It's a web application that connects beer sellers with buyers. Buyers can visit the website, browse available products, and choose from a list of sellers. Once they make a purchase, an order is created in the system with the status "in preparation". The seller then prepares the order and contacts a delivery driver, changing the order status to "sent". Once the orders arrive at their destination, buyers should change the order status to "arrived". The website allows buyers to view all their orders and their respective statuses. The same feature is available to sellers, who can only be created by the system admin.
